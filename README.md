@@ -1,5 +1,5 @@
 # PUI homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website: `https://jisueshin.github.io/Adrian-Shin-PUI-HW/`
 
-Repository link: `add the URL to this repository`
+Repository link: `https://github.com/jisueshin/Adrian-Shin-PUI-HW`
