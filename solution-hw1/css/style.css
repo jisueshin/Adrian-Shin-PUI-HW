@@ -21,6 +21,11 @@ body{
     font-size: 25px
 }
 
+.product-list{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .product-img{
     display: block;
     margin-left: auto;
@@ -28,4 +33,10 @@ body{
     height: 400px;
     width: 400px;
     border: 3px solid black;
+}
+
+.product-name{
+    display: block;
+    font-size: 20px;
+    margin-left: auto;
 }
