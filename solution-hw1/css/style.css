@@ -20,6 +20,7 @@ body{
 .nav{
     text-align: center;
     font-size: 20px;
+    text-decoration: none;
 }
 
 #products-nav:hover{
@@ -56,10 +57,14 @@ body{
     border: 3px solid black;
 }
 
-
 .product-name{
     font-size: 20px;
-    margin: 0;
-    padding: 0;
 }
 
+.product-link:hover>.product-name{
+    font-weight: 900;
+}
+
+.product-price{
+    font-size: 20px;
+}
