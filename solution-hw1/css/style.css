@@ -22,22 +22,32 @@ a{
     background-color: black;
 }
 
-.nav{
+.in-products-nav{
     text-align: center;
     font-size: 20px;
 }
 
-#products-nav:hover{
-    background-color: yellow; 
-    font-weight: 900;
-}
-
-#products-nav:active{
+#yellow-products-nav{
     background-color: yellow; 
     font-weight: 900;
 }
 
 #cart-nav:hover{
+    background-color: yellow; 
+    font-weight: 900;
+}
+
+.in-cart-nav{
+    text-align: center;
+    font-size: 20px;
+}
+
+#yellow-cart-nav{
+    background-color: yellow; 
+    font-weight: 900;
+}
+
+#products-nav:hover{
     background-color: yellow; 
     font-weight: 900;
 }
