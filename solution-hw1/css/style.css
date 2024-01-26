@@ -170,8 +170,6 @@ nav{
     background-color: yellow;
     border: 5px solid black;
     border-radius: 0;
-
-    margin-bottom: 200px;
 }
 
 /* Product Details page */ 
@@ -251,5 +249,4 @@ nav{
     background-color: yellow;
     border: 3px solid black;
     border-radius: 0;
-    margin-bottom: 500px;
 }
