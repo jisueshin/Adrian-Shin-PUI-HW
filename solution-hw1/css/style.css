@@ -141,6 +141,8 @@ nav{
     margin-bottom: 70px;
 }
 
+/* formatting for content underneath cart */
+
 #cart-bottom{
     width: 70%;
     height: 6px;

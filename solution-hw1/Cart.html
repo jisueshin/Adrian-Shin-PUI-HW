@@ -8,24 +8,26 @@
   </head>
 
   <body>
-    <div class = "header"> 
-        <a href="./index.html">
-        <img class = "logo" src = "assets/logo/logo-01.svg"
-        alt = "image of BunBun Bake Shop logo">
-        </a>
-        <hr id = "logo-line">
-    </div>
+    <header>
+      <a href="./index.html">
+      <img class = "logo" src = "assets/logo/logo-01.svg"
+      alt = "image of BunBun Bake Shop logo">
+      </a>
+      <hr id = "logo-line">
+    </header>
 
     <nav>
-        <a href="./index.html" class = "products-nav">PRODUCTS</a>
-        <br>
-        <br>
-        <a href="./Cart.html" class = "cart-nav on-page">CART</a>
-      </nav>
+      <a href="./index.html" class = "products-nav">PRODUCTS</a>
+      <br>
+      <br>
+      <a href="./Cart.html" class = "cart-nav on-page">CART</a>
+    </nav>
 
-    <h1 id = "cart-title">Shopping Cart</h1>
+    <main>
 
-    <div id = "original-cart">
+      <h1 id = "cart-title">Shopping Cart</h1>
+
+      <div id = "original-cart">
         <img class = "cart-img" src = "assets/products/original-cinnamon-roll.jpg"
         alt = "image of Original cinnamon roll">
         <p class = "remove">Remove</p>
@@ -33,9 +35,9 @@
         <p class = "cart-details">Glazing: Keep original</p>
         <p class = "cart-details">Pack size: 1</p>
         <p class = "cart-price">$2.49</p>
-    </div>
+      </div>
 
-    <div id = "double-choc-cart">
+      <div id = "double-choc-cart">
         <img class = "cart-img" src = "assets/products/double-chocolate-cinnamon-roll.jpg"
         alt = "image of Double chocolate cinnamon roll">
         <p class = "remove">Remove</p>
@@ -43,15 +45,18 @@
         <p class = "cart-details">Glazing: Sugar milk</p>
         <p class = "cart-details">Pack size: 6</p>
         <p class = "cart-price">$27.45</p>
-    </div>
+      </div>
 
-    <hr id = "cart-bottom"> 
+      <hr id = "cart-bottom"> 
+      <!--separating products in cart from checkout info-->
 
-    <p id = "total-price">Total: $29.94</p>
+      <p id = "total-price">Total: $29.94</p>
 
-    <button id = "checkout-btn">
-      Checkout
-    </button>
+      <button id = "checkout-btn">
+        Checkout
+      </button>
+
+    </main>
 
   </body>
 </html>
