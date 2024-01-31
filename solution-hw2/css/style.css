@@ -42,6 +42,10 @@ nav{
     padding-right: 60px;
 }
 
+.products-nav{
+    margin-right: 60px;
+}
+
 .products-nav:hover{
     background-color: yellow;
     font-weight: 900;
@@ -138,9 +142,9 @@ nav{
 }
 
 /* Cart page */ 
-.cart-container{
+.cart-container{ /* biggest container for every item*/
     margin-left: auto;
-    margin-right: 90px;
+    margin-right: 100px;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -157,29 +161,29 @@ nav{
     display: flex;
     gap: 30px;
     justify-content: space-between;
+    /*border: 3px solid blue;*/
 }
 
 /* inside info box */
 .cart-img{
     width: 200px;
     height: 200px;
-    display: block;
+    /*display: block;*/
     border: 3px solid black;
 }
 
 .cart-details{ /*roll name, glazing, pack size*/
     font-size: 20px;
     text-align: left;
-    vertical-align: top;
     flex-grow: 1;
-    border: 3px solid black;
+    /*border: 3px solid black;*/
 }
 
 .cart-price{
     text-align: right;
-    /*vertical-align: center;*/
-    font-size: 25px;
-    border: 3px solid black;
+    font-size: 20px;
+    /*border: 3px solid black;*/
+    align-self: center;
 }
 /* end of info box */
 
