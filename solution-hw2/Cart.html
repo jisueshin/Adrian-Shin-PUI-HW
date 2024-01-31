@@ -9,32 +9,42 @@
 
   <body>
     <header>
-      <a href="./index.html">
-      <img class = "logo" src = "assets/logo/logo-01.svg"
-      alt = "image of BunBun Bake Shop logo">
-      </a>
-      <hr id = "logo-line">
+      <div class = "header-left">
+        <a href="./index.html">
+          <img class = "logo" src = "assets/logo/logo-01.svg" 
+          alt = "image of BunBun Bake Shop logo">
+        </a>
+      </div>
+      <div class = "header-right">
+        <nav>
+          <a href="./index.html" class = "products-nav">PRODUCTS</a>
+          <a href="./Cart.html" class = "cart-nav on-page">CART</a>
+          <span class = "cart-badge">2</span>
+        </nav>
+        <hr id = "logo-line">
+        <h1 id = "list-title">Our hand-made cinnamon rolls</h1>
+      </div>
     </header>
 
-    <nav>
-      <a href="./index.html" class = "products-nav">PRODUCTS</a>
-      <br>
-      <br>
-      <a href="./Cart.html" class = "cart-nav on-page">CART</a>
-    </nav>
-
-    <main>
-
-      <h1 id = "cart-title">Shopping Cart</h1>
-
-      <div id = "original-cart">
-        <img class = "cart-img" src = "assets/products/original-cinnamon-roll.jpg"
-        alt = "image of Original cinnamon roll">
-        <p class = "remove">Remove</p>
-        <p class = "cart-details">Original Cinnamon Roll</p>
-        <p class = "cart-details">Glazing: Keep original</p>
-        <p class = "cart-details">Pack size: 1</p>
-        <p class = "cart-price">$2.49</p>
+    <main class = "cart-container">
+    <!--biggest container for all cart components-->
+      <div class = "cart-item">
+      <!--second level container for one row of cart item-->
+        <div class = "cart-item-info">
+        <!--container for roll img, info, and price-->
+          <img class = "cart-img" src = "assets/products/original-cinnamon-roll.jpg"
+          alt = "image of Original cinnamon roll">
+          <div class = "cart-details"> 
+            <p>Original Cinnamon Roll</p>
+            <p>Glazing: Keep original</p>
+            <p>Pack size: 1</p>
+          </div>
+          <p class = "cart-price">$2.49</p>
+        </div>
+        <div class = "cart-item-remove">
+        <!--container for remove option-->
+          <p>Remove</p>
+        </div>
       </div>
 
       <div id = "double-choc-cart">
