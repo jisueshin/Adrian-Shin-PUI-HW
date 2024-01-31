@@ -32,14 +32,14 @@
       <!--second level container for one row of cart item-->
         <div class = "cart-item-info">
         <!--container for roll img, info, and price-->
-          <img class = "cart-img" src = "assets/products/original-cinnamon-roll.jpg"
-          alt = "image of Original cinnamon roll">
-          <div class = "cart-details"> 
+          <img class = "cart-item-img" src = "assets/products/original-cinnamon-roll.jpg"
+          alt = "Original cinnamon roll">
+          <div class = "cart-item-details"> 
             <p>Original Cinnamon Roll</p>
             <p>Glazing: Keep original</p>
             <p>Pack size: 1</p>
           </div>
-          <p class = "cart-price">$2.49</p>
+          <p class = "cart-item-price">$2.49</p>
         </div>
         <div class = "cart-item-remove">
         <!--container for remove option-->
@@ -47,22 +47,31 @@
         </div>
       </div>
 
-      <div id = "double-choc-cart">
-        <img class = "cart-img" src = "assets/products/double-chocolate-cinnamon-roll.jpg"
-        alt = "image of Double chocolate cinnamon roll">
-        <p class = "remove">Remove</p>
-        <p class = "cart-details">Double Chocolate Cinnamon Rolls</p>
-        <p class = "cart-details">Glazing: Sugar milk</p>
-        <p class = "cart-details">Pack size: 6</p>
-        <p class = "cart-price">$27.45</p>
+      <div class = "cart-item">
+        <div class = "cart-item-info">
+          <img class = "cart-item-img" src = "assets/products/double-chocolate-cinnamon-roll.jpg"
+          alt = "image of Double chocolate cinnamon roll">
+          <div class = "cart-item-details">
+            <p>Double Chocolate Cinnamon Rolls</p>
+            <p>Glazing: Sugar milk</p>
+            <p>Pack size: 6</p>
+          </div>
+          <p class = "cart-item-price">$27.45</p>
+        </div>
+        <div class = "cart-item-remove">
+            <p>Remove</p>
+        </div>
       </div>
 
-      <hr id = "cart-bottom"> 
+      <hr id = "cart-bottom-line"> 
       <!--separating products in cart from checkout info-->
 
-      <p id = "total-price">Total: $29.94</p>
+      <div class = "total-price-container">
+        <p class = "total-text">Total</p>
+        <p class = "total-price-text">$29.94</p>
+      </div>
 
-      <button id = "checkout-btn">
+      <button class = "checkout-btn">
         Checkout
       </button>
 
