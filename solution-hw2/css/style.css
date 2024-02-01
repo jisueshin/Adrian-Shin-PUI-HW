@@ -129,8 +129,8 @@ nav{
     text-wrap: wrap;
 }
 
-.product-link:hover>.product-name{
-    font-weight: 900;
+.product-link:hover .product-name{ 
+    font-weight: 900; 
 }
 
 .product-price{
