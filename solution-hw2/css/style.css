@@ -99,7 +99,6 @@ nav{
     display: block;
     width: auto;
     padding: 10px;
-    /*background-color: rgb(124, 124, 211);*/
 }
 
 .product-link:hover{
@@ -145,7 +144,6 @@ nav{
     width: 60%;
     display: flex;
     flex-direction: column;
-    /*background-color: rgb(152, 152, 201);*/
 }
 
 .cart-item{ /*entire row of one item*/
@@ -158,7 +156,6 @@ nav{
     display: flex;
     gap: 30px;
     justify-content: space-between;
-    /*border: 3px solid blue;*/
 }
 
 /* inside info box */
@@ -179,8 +176,8 @@ nav{
 .cart-item-price{
     text-align: right;
     font-size: 20px;
-    /*border: 3px solid black;*/
-    align-self: center;
+    padding-top: 50px;
+    /*align-self: center;*/
 }
 /* end of info box */
 
@@ -188,11 +185,6 @@ nav{
     font-size: 20px;
     font-weight: 900;
     text-decoration: underline;
-}
-
-#double-choc-cart{
-    margin-top: 130px;
-    margin-bottom: 70px;
 }
 
 /* formatting for content underneath cart items */
@@ -208,16 +200,11 @@ nav{
     font-size: 20px;
     justify-content: space-between;
     text-align: right;
-    /*background-color: rgb(181, 181, 245);*/
 }
 
 .total-text{
     width: 35%;
 }
-/*
-.total-price-text{
-    border: 3px solid black; 
-}*/
 
 .checkout-btn{
     margin-left: auto;
