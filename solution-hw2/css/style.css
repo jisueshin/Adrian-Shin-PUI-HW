@@ -78,7 +78,7 @@ nav{
     background-color: black;
 }
 
-#list-title{
+.header-title{
     text-align: center;
     font-size: 25px;
     font-weight: 300;
@@ -88,8 +88,6 @@ nav{
 /* header end */
 
 .product-list{
-    /* margin-left: 100px;
-    margin-right: 100px; */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
