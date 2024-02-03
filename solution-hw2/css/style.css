@@ -230,8 +230,8 @@ nav{
     display: flex;
     width: 80%;
     margin: auto;
-    gap: 20px;
-    align-items: stretch;  
+    gap: 25px;
+    align-items: stretch; 
 }
 
 .detail-img{
@@ -240,7 +240,7 @@ nav{
     border: 3px solid black; 
 }
 
-.detail-container{ /* all text next to img inside here*/
+.detail-text-container{ /* all text next to img inside here*/
     width: 30%;
     display: flex;
     flex-direction: column; 
@@ -255,7 +255,7 @@ nav{
 /* dropdown options styling */
 .menu-label{
     font-size: 20px;
-    line-height: 320%;
+    line-height: 300%;
 }
 
 .glaze-menu{
@@ -290,7 +290,7 @@ nav{
 
 .roll-price{
     margin-bottom: 0;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -299,7 +299,7 @@ nav{
     width: auto;
     height: auto;
 
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     color: black;
     padding-top: 10px;
@@ -308,7 +308,7 @@ nav{
     padding-right: 30px;
 
     background-color: yellow;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 0;
 }
 
