@@ -28,6 +28,7 @@ function onPackChange(){
     packPrice = Number(this.value);
     onPriceChange();
 }
+//multiplying this makes some weird decimals
 
 let displayedPrice = document.querySelector(".roll-price");
 console.log(displayedPrice);
@@ -35,8 +36,9 @@ console.log(displayedPrice);
 function onPriceChange(){
     let newPrice = (basePrice + glazingPrice) * packPrice;
     console.log("this is" + newPrice); 
+    newPrice = newPrice.toFixed(2)
+    console.log("this is" + newPrice);
     displayedPrice.innerText = "$" + newPrice;
-    console.log(typeof newPrice);
 }
 
 
