@@ -1,23 +1,66 @@
-// find which option was selected 
-// find pricing adjustment 
-// display pricing adjustment on cart price
-
+// filling glazing dropdown with glazing optoins
 let selectedGlazing = document.querySelector("#glazing");
 
-selectedGlazing 
-//array
-allGlazing = {
-    "Keep original": 0,
-    "Sugar milk": 0,
-    "Vanilla milk": 0.5,
-    "Double chocolate": 1.5,
+allGlazing = [
+{
+    glazeName: "Keep original",
+    priceAdaptation: 0,
+},
+{
+    glazeName: "Sugar milk",
+    priceAdaptation: 0,
+},
+{
+    glazeName: "Vanilla milk",
+    priceAdaptation: 0.5,
+},
+{
+    glazeName: "Double chocolate",
+    priceAdaptation: 1.5,
+}
+]
+
+for (let i = 0; i < allGlazing.length; i++){
+    var option = document.createElement('option');
+    option.text = allGlazing[i].glazeName;
+    option.value = allGlazing[i].priceAdaptation;  
+    selectedGlazing.add(option);
 }
 
+//filling pack size dropdown with pack size options
+
+let selectedPack = document.querySelector("#pack-size");
+
+allPackSize = [
+{
+    packSize: "1",
+    priceAdaptation: 0,
+},
+{
+    packSize: "3",
+    priceAdaptation: 3,
+},
+{
+    packSize: "6",
+    priceAdaptation: 5,
+},
+{
+    packSize: "12",
+    priceAdaptation: 10,
+}
+]
+
+for (let i = 0; i < allPackSize.length; i++){
+    var option = document.createElement('option');
+    option.text = allPackSize[i].packSize;
+    option.value = allPackSize[i].priceAdaptation;  
+    selectedPack.add(option);
+}
+
+// adding event listeners to detect when someone changes options
 selectedGlazing.addEventListener('change', onGlazingChange);
 
 let glazingPrice = 0;
-
-let selectedPack = document.querySelector("#pack-size");
 
 selectedPack.addEventListener('change', onPackChange);
 
@@ -26,10 +69,7 @@ let packPrice = 1;
 let basePrice = 2.49;
 
 function onGlazingChange(){
-    //console.log(this.value);
     glazingPrice = Number(this.value);
-    //console.log(glazingPrice);
-    //console.log(typeof glazingPrice);
     onPriceChange();
 }
 
@@ -37,17 +77,13 @@ function onPackChange(){
     packPrice = Number(this.value);
     onPriceChange();
 }
-//multiplying this makes some weird decimals
 
+// displaying price calculations
 let displayedPrice = document.querySelector(".roll-price");
 
 function onPriceChange(){
     let newPrice = (basePrice + glazingPrice) * packPrice;
-    console.log(basePrice)
-    console.log(glazingPrice)
-    console.log(packPrice)
-    newPrice = newPrice.toFixed(2)
-    console.log("this is" + newPrice);
+    newPrice = newPrice.toFixed(2);
     displayedPrice.innerText = "$" + newPrice;
 }
 
