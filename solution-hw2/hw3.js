@@ -4,6 +4,15 @@
 
 let selectedGlazing = document.querySelector("#glazing");
 
+selectedGlazing 
+//array
+allGlazing = {
+    "Keep original": 0,
+    "Sugar milk": 0,
+    "Vanilla milk": 0.5,
+    "Double chocolate": 1.5,
+}
+
 selectedGlazing.addEventListener('change', onGlazingChange);
 
 let glazingPrice = 0;
@@ -31,11 +40,12 @@ function onPackChange(){
 //multiplying this makes some weird decimals
 
 let displayedPrice = document.querySelector(".roll-price");
-console.log(displayedPrice);
 
 function onPriceChange(){
     let newPrice = (basePrice + glazingPrice) * packPrice;
-    console.log("this is" + newPrice); 
+    console.log(basePrice)
+    console.log(glazingPrice)
+    console.log(packPrice)
     newPrice = newPrice.toFixed(2)
     console.log("this is" + newPrice);
     displayedPrice.innerText = "$" + newPrice;

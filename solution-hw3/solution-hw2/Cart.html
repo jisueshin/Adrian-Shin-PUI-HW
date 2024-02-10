@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <div class = "header-left">
+        <a href="./index.html">
+          <img class = "logo" src = "assets/logo/logo-01.svg" 
+          alt = "image of BunBun Bake Shop logo">
+        </a>
+      </div>
+      <div class = "header-right">
+        <nav>
+          <a href="./index.html" class = "products-nav">PRODUCTS</a>
+          <a href="./Cart.html" class = "cart-nav on-page">CART</a>
+          <span class = "cart-badge">2</span>
+        </nav>
+        <hr id = "logo-line">
+        <h1 class = "header-title">Shopping cart</h1>
+      </div>
+    </header>
+
+    <main class = "cart-container">
+    <!--biggest container for all cart components-->
+      <div class = "cart-item">
+      <!--second level container for one row of cart item-->
+        <div class = "cart-item-info">
+        <!--container for roll img, info, and price-->
+          <img class = "cart-item-img" src = "assets/products/original-cinnamon-roll.jpg"
+          alt = "Original cinnamon roll">
+          <div class = "cart-item-details"> 
+            <p>Original Cinnamon Roll</p>
+            <p>Glazing: Keep original</p>
+            <p>Pack size: 1</p>
+          </div>
+          <p class = "cart-item-price">$2.49</p>
+        </div>
+        <div class = "cart-item-remove">
+        <!--container for remove option-->
+          <p>Remove</p>
+        </div>
+      </div>
+
+      <div class = "cart-item">
+        <div class = "cart-item-info">
+          <img class = "cart-item-img" src = "assets/products/double-chocolate-cinnamon-roll.jpg"
+          alt = "Double chocolate cinnamon roll">
+          <div class = "cart-item-details">
+            <p>Double Chocolate Cinnamon Rolls</p>
+            <p>Glazing: Sugar milk</p>
+            <p>Pack size: 6</p>
+          </div>
+          <p class = "cart-item-price">$27.45</p>
+        </div>
+        <div class = "cart-item-remove">
+            <p>Remove</p>
+        </div>
+      </div>
+
+      <hr id = "cart-bottom-line"> 
+      <!--separating products in cart from checkout info-->
+
+      <div class = "total-price-container">
+        <p class = "total-text">Total</p>
+        <p class = "total-price-text">$29.94</p>
+      </div>
+
+      <button class = "checkout-btn">
+        Checkout
+      </button>
+
+    </main>
+
+  </body>
+</html>
