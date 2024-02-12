@@ -34,7 +34,7 @@ let selectedPack = document.querySelector("#pack-size");
 allPackSize = [
 {
     packSize: "1",
-    priceAdaptation: 0,
+    priceAdaptation: 1,
 },
 {
     packSize: "3",
@@ -80,6 +80,7 @@ function onPackChange(){
 
 // displaying price calculations
 let displayedPrice = document.querySelector(".roll-price");
+displayedPrice.innerText = "$" + basePrice;
 
 function onPriceChange(){
     let newPrice = (basePrice + glazingPrice) * packPrice;
