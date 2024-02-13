@@ -8,10 +8,10 @@ let allGlazing = {
     "Double chocolate" : 1.5,
 }
 
-for (let [key, value] of Object.entries(allGlazing)){
+for (const [glazeName, glazePrice] of Object.entries(allGlazing)){
     var option = document.createElement('option');
-    option.text = key;  
-    option.value = value;  
+    option.text = glazeName;  
+    option.value = glazePrice;  
     selectedGlazing.add(option);
 }
 
@@ -25,10 +25,10 @@ let allPackSize = {
     "12": 10,
 }
 
-for (let [key, value] of Object.entries(allPackSize)){
+for (const [packSize, packPrice] of Object.entries(allPackSize)){
     var option = document.createElement('option');
-    option.text = key;  
-    option.value = value;  
+    option.text = packSize;  
+    option.value = packPrice;  
     selectedPack.add(option);
 }
 
