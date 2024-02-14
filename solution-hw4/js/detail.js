@@ -1,3 +1,22 @@
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const rollType = params.get("roll");
+
+console.log(queryString);
+
+//TODO: change header title 
+const headerTitle = document.querySelector(".header-title");
+headerTitle.innerText = rollType + " cinnamon roll";
+
+//TODO: change roll image 
+//const imageSource = rollType.imageFile;
+//console.log(rolls);
+const detailImage = document.querySelector(".detail-img");
+
+//TODO: change base price
+
+// hw 3 content 
+
 // filling glazing dropdown with glazing optoins
 let selectedGlazing = document.querySelector("#glazing");
 
@@ -7,6 +26,8 @@ let allGlazing = {
     "Vanilla milk" : 0.5,
     "Double chocolate" : 1.5,
 }
+console.log(allGlazing);
+console.log(typeof(allGlazing));
 
 for (const [glazeName, glazePrice] of Object.entries(allGlazing)){
     var option = document.createElement('option');
