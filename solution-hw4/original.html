@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/hw3.js"></script>
+  </head> 
+  
+  <body>
+    <header>
+      <div class = "header-left">
+        <a href="./index.html">
+          <img class = "logo" src = "assets/logo/logo-01.svg" 
+          alt = "image of BunBun Bake Shop logo">
+        </a>
+      </div>
+      <div class = "header-right">
+        <nav>
+          <a href="./index.html" class = "products-nav on-page">PRODUCTS</a>
+          <a href="./Cart.html" class = "cart-nav">CART</a>
+          <span class = "cart-badge">2</span>
+        </nav>
+        <hr id = "logo-line">
+        <h1 class = "header-title">Original cinnamon roll</h1>
+      </div>
+    </header>
+
+    <main class = "product-detail-container">
+    <!-- main container for all product detail information-->
+      <img class = "detail-img" src = "assets/products/original-cinnamon-roll.jpg"
+      alt = "Original cinnamon roll">
+
+      <div class = "detail-text-container">
+        <!--all of the text next to the img is here-->
+
+        <p class = "roll-desc">Customize our delicious, hand-made cinnamon roll to your liking!</p>
+        
+        <div class = "roll-options">
+        <!-- both dropdown menus are inside this -->
+          <div class = "glaze-menu">
+            <label for = "glazing" class = "menu-label">Glazing:</label>
+            <br>
+            <select name = "glazing" id = "glazing">
+              <!--options have been populated on javascript-->
+            </select>
+          </div>
+
+          <div class = "pack-menu">
+            <label for = "pack-size" class = "menu-label">Pack size:</label>
+            <select name = "pack-size" id = "pack-size">
+              <!--options have been populated on javascript-->
+            </select>
+          </div>
+        </div>
+
+        <div class = "price-to-cart">
+          <p class = "roll-price"></p>
+          <!--blank p because price is filled on javascript-->
+          <button id = "add-cart-btn">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>
