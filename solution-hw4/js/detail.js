@@ -1,19 +1,19 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
-
-console.log(queryString);
+//where does "roll" come from?
 
 //TODO: change header title 
 const headerTitle = document.querySelector(".header-title");
 headerTitle.innerText = rollType + " cinnamon roll";
 
 //TODO: change roll image 
-//const imageSource = rollType.imageFile;
-//console.log(rolls);
+const imageSource = rolls[rollType]["imageFile"];
 const detailImage = document.querySelector(".detail-img");
+detailImage.src = "assets/products/" + imageSource;
 
 //TODO: change base price
+let basePrice = rolls[rollType]["basePrice"];
 
 // hw 3 content 
 
@@ -26,8 +26,6 @@ let allGlazing = {
     "Vanilla milk" : 0.5,
     "Double chocolate" : 1.5,
 }
-console.log(allGlazing);
-console.log(typeof(allGlazing));
 
 for (const [glazeName, glazePrice] of Object.entries(allGlazing)){
     var option = document.createElement('option');
@@ -62,8 +60,6 @@ selectedPack.addEventListener('change', onPackChange);
 
 let packPrice = 1;
  
-let basePrice = 2.49;
-
 function onGlazingChange(){
     glazingPrice = Number(this.value);
     onPriceChange();
