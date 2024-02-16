@@ -64,7 +64,6 @@ let glazingPrice = 0;
 selectedPack.addEventListener('change', onPackChange);
 
 let packPrice = 1;
-console.log(currentGlaze);
 
 function onGlazingChange(){
     glazingPrice = Number(this.value);
@@ -74,6 +73,7 @@ function onGlazingChange(){
 
 function onPackChange(){
     packPrice = Number(this.value);
+    currentPackSize = selectedPack.options[selectedPack.selectedIndex].text; 
     onPriceChange();
 }
 
@@ -98,16 +98,19 @@ class Roll {
         this.glazing =  rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
-
-        const btnAddCart = document.querySelector("#add-cart-btn");
-        btnAddCart.onclick = this.updateCart();
-    }
-
-    updateCart(){
     }
 }
 
+const btnAddCart = document.querySelector("#add-cart-btn");
 
+btnAddCart.addEventListener("click", updateCart);
 
+function updateCart(){
+    item = new Roll(rollType, currentGlaze, currentPackSize, basePrice);
+    console.log("hi");
+    console.log(item);
+    cart.push(item);
+    console.log(cart);
+}
 
 
