@@ -1,24 +1,25 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
-//where does "roll" come from?
+//Q: where does "roll" come from?
 
-//TODO: change header title 
+//changing header title 
 const headerTitle = document.querySelector(".header-title");
 headerTitle.innerText = rollType + " cinnamon roll";
 
-//TODO: change roll image 
+//changing roll image (and alt text)
 const imageSource = rolls[rollType]["imageFile"];
 const detailImage = document.querySelector(".detail-img");
 detailImage.src = "assets/products/" + imageSource;
+detailImage.alt = rollType + " cinnamon roll";
 
-//TODO: change base price
+//changing base price
 let basePrice = rolls[rollType]["basePrice"];
 
 // pricing (hw 3) content ---------------------------------------------
 
 // filling glazing dropdown with glazing optoins
-let selectedGlazing = document.querySelector("#glazing");
+let glazingSelect = document.querySelector("#glazing");
 
 let allGlazing = {
     "Keep original" : 0,
@@ -31,14 +32,14 @@ for (const [glazeName, glazePrice] of Object.entries(allGlazing)){
     var option = document.createElement('option');
     option.text = glazeName;  
     option.value = glazePrice;  
-    selectedGlazing.add(option);
+    glazingSelect.add(option);
 }
 
 let currentGlaze = Object.keys(allGlazing)[0]
 //currently selected glazing is automatically set to first option
 
 //filling pack size dropdown with pack size options
-let selectedPack = document.querySelector("#pack-size");
+let packSelect = document.querySelector("#pack-size");
 
 let allPackSize = {
     "1": 1,
@@ -51,29 +52,29 @@ for (const [packSize, packPrice] of Object.entries(allPackSize)){
     var option = document.createElement('option');
     option.text = packSize;  
     option.value = packPrice;  
-    selectedPack.add(option);
+    packSelect.add(option);
 }
 
 let currentPackSize = Object.keys(allPackSize)[0]
 
 // adding event listeners to detect when someone changes options
-selectedGlazing.addEventListener('change', onGlazingChange);
+glazingSelect.addEventListener('change', onGlazingChange);
 
 let glazingPrice = 0;
 
-selectedPack.addEventListener('change', onPackChange);
+packSelect.addEventListener('change', onPackChange);
 
 let packPrice = 1;
 
 function onGlazingChange(){
     glazingPrice = Number(this.value);
-    currentGlaze = selectedGlazing.options[selectedGlazing.selectedIndex].text;
+    currentGlaze = glazingSelect.options[glazingSelect.selectedIndex].text;
     onPriceChange();
 }
 
 function onPackChange(){
     packPrice = Number(this.value);
-    currentPackSize = selectedPack.options[selectedPack.selectedIndex].text; 
+    currentPackSize = packSelect.options[packSelect.selectedIndex].text; 
     onPriceChange();
 }
 
@@ -87,7 +88,7 @@ function onPriceChange(){
     displayedPrice.innerText = "$" + newPrice;
 }
 
-//pricing --------------------------------------------------------
+// adding to cart section ---------------------------------------------
 
 //cart array
 let cart = []
@@ -103,12 +104,10 @@ class Roll {
 
 const btnAddCart = document.querySelector("#add-cart-btn");
 
-btnAddCart.addEventListener("click", updateCart);
+btnAddCart.onclick = updateCart;
 
 function updateCart(){
     item = new Roll(rollType, currentGlaze, currentPackSize, basePrice);
-    console.log("hi");
-    console.log(item);
     cart.push(item);
     console.log(cart);
 }
