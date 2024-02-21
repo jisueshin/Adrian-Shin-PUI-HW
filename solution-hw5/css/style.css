@@ -1,0 +1,319 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: white;
+    font-weight:300;
+}
+
+button{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 70px;
+}
+
+.logo{
+    width: 400px;
+}
+
+.header-right{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: space-around;
+}
+
+/* new nav */
+nav{
+    font-size: 30px;
+    text-align: center;
+    align-self: flex-end;
+    padding-right: 60px;
+}
+
+.products-nav{
+    margin-right: 60px;
+}
+
+.products-nav:hover{
+    background-color: yellow;
+    font-weight: 900;
+}
+
+.cart-nav:hover{
+    background-color: yellow;
+    font-weight: 900;
+}
+
+.on-page{
+    background-color: yellow;
+    font-weight: 900;
+}
+
+.cart-badge{
+    background-color: red;
+    color: white; 
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 9px 5px;
+    vertical-align: super; 
+}
+/* new nav end */
+
+#logo-line{
+    height: 6px;
+    width: 100%;
+    background-color: black;
+}
+
+.header-title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+    align-self: flex-start;
+}
+
+/* header end */
+
+.product-list{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.product-link{
+    display: block;
+    width: auto;
+    padding: 10px;
+}
+
+.product-link:hover{
+    background-color: yellow;
+    display: block;
+}
+
+.link-content{
+    width: 285px;
+}
+.product-img{
+    height: 285px;
+    width: 285px;
+    border: 3px solid black;
+    display: block;
+    margin: auto;
+}
+
+.product-name{
+    font-size: 20px;
+    text-decoration: underline;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: normal;
+}
+
+.product-link:hover .product-name{ 
+    font-weight: 900; 
+}
+
+.product-price{
+    font-size: 20px;
+    margin-top: 5px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cart page */ 
+.cart-container{ /* biggest container for every item*/
+    margin-left: auto;
+    margin-right: 100px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item{ /*entire row of one item*/
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.cart-item-info{ /*contains img, roll details, and price*/
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* inside info box */
+.cart-item-img{
+    width: 200px;
+    height: 200px;
+    /*display: block;*/
+    border: 3px solid black;
+}
+
+.cart-item-details{ /*roll name, glazing, pack size*/
+    font-size: 20px;
+    text-align: left;
+    flex-grow: 1;
+    /*border: 3px solid black;*/
+}
+
+.cart-item-price{
+    text-align: right;
+    font-size: 20px;
+    padding-top: 50px;
+    /*align-self: center;*/
+}
+/* end of info box */
+
+.cart-item-remove{ 
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+/* formatting for content underneath cart items */
+
+#cart-bottom-line{
+    width: 100%;
+    height: 6px;
+    background-color: black;
+}
+
+.total-price-container{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.total-text{
+    width: 35%;
+}
+
+.checkout-btn{
+    margin-left: auto;
+    text-align: center;
+    width: auto;
+    height: auto;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 0;
+}
+
+/* Product Details page */ 
+.product-detail-container{ /* main container for all product detail information */
+    display: flex;
+    width: 80%;
+    margin: auto;
+    gap: 25px;
+    align-items: stretch; 
+}
+
+.detail-img{
+    width: 600px;
+    height: 600px;
+    border: 3px solid black; 
+}
+
+.detail-text-container{ /* all text next to img inside here*/
+    width: 30%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.roll-desc{
+    text-align: left;
+    font-size: 20px;
+}
+
+/* dropdown options styling */
+.menu-label{
+    font-size: 20px;
+    line-height: 300%;
+}
+
+.glaze-menu{
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pack-menu{
+    text-align: left;
+}
+
+#glazing{
+    font-size:20px;
+    width: 100%;
+    padding: 5px;
+}
+
+#pack-size{
+    font-size: 20px;
+    width: 100%;
+    padding: 5px;
+}
+/* dropdown options styling end */
+
+.price-to-cart{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding-right: 5px;
+    gap: 25px;
+}
+
+.roll-price{
+    margin-bottom: 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+#add-cart-btn{
+    text-align: center;
+    width: auto;
+    height: auto;
+
+    font-size: 17px;
+    font-weight: 700;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-color: yellow;
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+/* end of detail container */
