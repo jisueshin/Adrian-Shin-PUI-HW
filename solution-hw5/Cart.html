@@ -29,24 +29,30 @@
     </header>
 
     <main class = "cart-container">
-    <!--biggest container for all cart components-->
-      <div class = "cart-item">
-      <!--second level container for one row of cart item-->
-        <div class = "cart-item-info">
-        <!--container for roll img, info, and price-->
-          <img class = "cart-item-img" src = "assets/products/original-cinnamon-roll.jpg"
-          alt = "Original cinnamon roll">
-          <div class = "cart-item-details"> 
-            <p>Original Cinnamon Roll</p>
-            <p>Glazing: Keep original</p>
-            <p>Pack size: 1</p>
+    <!--biggest container for all cart components (including checkout)-->
+      <div id = "cart-items-container">
+      <!--container for just items (not including checkout)-->
+        <template id = "cart-item-template">
+        <!--template contains one row of cart item-->
+          <div class = "cart-item">
+          <!--second level container for one row of cart item-->
+            <div class = "cart-item-info">
+            <!--container for roll img, info, and price-->
+              <img class = "cart-item-img" src = "assets/products/original-cinnamon-roll.jpg"
+              alt = "Original cinnamon roll">
+              <div class = "cart-item-details"> 
+                <p id = "cart-item-name">Original Cinnamon Roll</p>
+                <p id = "cart-item-glazing">Glazing: Keep original</p>
+                <p id = "cart-item-pack-size">Pack size: 1</p>
+              </div>
+              <p id = "cart-item-price">$2.49</p>
+            </div>
+            <div>
+            <!--container for remove option-->
+              <button id = "item-remove-btn">Remove</button>
+            </div>
           </div>
-          <p class = "cart-item-price">$2.49</p>
-        </div>
-        <div class = "cart-item-remove">
-        <!--container for remove option-->
-          <p>Remove</p>
-        </div>
+        </template>
       </div>
 
       <div class = "cart-item">
@@ -60,8 +66,8 @@
           </div>
           <p class = "cart-item-price">$27.45</p>
         </div>
-        <div class = "cart-item-remove">
-            <p>Remove</p>
+        <div>
+            <button id = "item-remove-btn">Remove</button>
         </div>
       </div>
 
@@ -70,7 +76,7 @@
 
       <div class = "total-price-container">
         <p class = "total-text">Total</p>
-        <p class = "total-price-text">$29.94</p>
+        <p id = "total-price-text">$29.94</p>
       </div>
 
       <button class = "checkout-btn">
