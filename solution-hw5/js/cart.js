@@ -9,14 +9,6 @@ class Roll {
     }
 }
 
-function addNewRoll(rollType, rollGlazing, packSize){
-    let basePrice = rolls[rollType]["basePrice"];
-    const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
-    cartSet.add(roll);
-    return roll;
-}
-
-//TODO: move this later
 let allGlazing = {
     "Keep original" : 0,
     "Sugar milk" : 0,
@@ -31,6 +23,15 @@ let allPackSize = {
     "12": 10,
 }
 
+//updating cart set
+function addNewRoll(rollType, rollGlazing, packSize){
+    let basePrice = rolls[rollType]["basePrice"];
+    const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
+    cartSet.add(roll);
+    return roll;
+}
+
+//initializing four rolls in the cart
 const cartOriginal = addNewRoll("Original", "Sugar milk", "1");
 
 const cartWalnut = addNewRoll("Walnut", "Vanilla milk", "12");
@@ -39,6 +40,7 @@ const cartRaisin = addNewRoll("Raisin", "Sugar milk", "3");
 
 const cartApple = addNewRoll("Apple", "Keep original", "3");
 
+//called here to initialize price with all four items first
 updateTotalPrice();
 
 for (const roll of cartSet){
@@ -70,6 +72,7 @@ function updateElement(roll){
     const rollImage = roll.element.querySelector(".cart-item-img"); 
     let imageSource = rolls[roll.type]["imageFile"]; 
     rollImage.src = "assets/products/" + imageSource; 
+    rollImage.alt = roll.type + " cinnamon roll";
 
     //updating name:
     const rollName = roll.element.querySelector("#cart-item-name");
@@ -87,23 +90,6 @@ function updateElement(roll){
     const rollPrice = roll.element.querySelector("#cart-item-price");
     itemPrice = findItemPrice(roll);
     rollPrice.innerText = "$" + itemPrice;
-
-    //updateTotalPrice(roll);
-
-    /*
-    let glazingPrice = allGlazing[roll.glazing];
-    let packPrice = allPackSize[roll.size];
-    let itemPrice = (roll.basePrice + glazingPrice) * packPrice;
-    itemPrice = itemPrice.toFixed(2);
-    rollPrice.innerText = "$" + itemPrice;
-    
-
-    //updating total price: 
-    //updateTotalPrice(itemPrice);
-    const displayedPrice = document.querySelector("#total-price-text");
-    totalPrice += Number(itemPrice); 
-    displayedPrice.innerText = totalPrice;
-    */
 }
 
 function findItemPrice(roll){
@@ -114,28 +100,15 @@ function findItemPrice(roll){
     return itemPrice
 }
 
-/*
-function updateTotalPrice(itemPrice){
-    const displayedPrice = document.querySelector("#total-price-text");
-    totalPrice += Number(itemPrice); 
-    console.log(typeof(itemPrice));
-    displayedPrice.innerText = totalPrice;
-    console.log(totalPrice)
-}*/
-
-console.log(cartSet);
-
 function updateTotalPrice(){
     const displayedPrice = document.querySelector("#total-price-text");
+    //resetting total price to 0: 
     totalPrice = 0;
     for (const roll of cartSet){
         itemPrice = findItemPrice(roll);
-        totalPrice += Number(itemPrice);
-        totalPrice.toFixed(2);
-        console.log(totalPrice);
+        totalPrice += Number(itemPrice);  
     }
-
+    totalPrice = totalPrice.toFixed(2);
     displayedPrice.innerText = "$" + totalPrice;
-    console.log(totalPrice)
 }
 
