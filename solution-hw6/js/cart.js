@@ -57,6 +57,7 @@ function removeItem(roll){
     cartSet.delete(roll);
     updateTotalPrice();
     updateLocalStorage();
+    updateCartNumber();
 }
 
 function updateElement(roll){

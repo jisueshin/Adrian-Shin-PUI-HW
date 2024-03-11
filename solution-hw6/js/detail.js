@@ -111,6 +111,7 @@ function updateCart(){
     cart.push(item);
     console.log(cart);
     saveToLocalStorage();
+    updateCartNumber();
 }
 
 function saveToLocalStorage(){
