@@ -1,7 +1,6 @@
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
-//Q: where does "roll" come from?
 
 //changing header title 
 const headerTitle = document.querySelector(".header-title");
@@ -106,24 +105,23 @@ const btnAddCart = document.querySelector("#add-cart-btn");
 
 btnAddCart.onclick = updateCart;
 
+//adds to cart array
 function updateCart(){
     item = new Roll(rollType, currentGlaze, currentPackSize, basePrice);
     cart.push(item);
-    console.log(cart);
     saveToLocalStorage();
     updateCartNumber();
 }
 
+//uploads cart to local storage
 function saveToLocalStorage(){
     let cartArrayString = JSON.stringify(cart);
     localStorage.setItem("storedRolls", cartArrayString);
-    console.log(localStorage);
+    let currentStorage = localStorage.getItem("storedRolls");
+    console.log(currentStorage);
 }
 
-//works when i stay on same page (two same type rolls)
-//TODO: implement retrieve function here? 
-//cart array is reset every time i reload -> resets stored rolls 
-
+//retrieving data if changed on cart page
 function retrieveLocalStorage(){
     const cartArrayString = localStorage.getItem("storedRolls");
     const cartArray = JSON.parse(cartArrayString);

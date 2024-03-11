@@ -23,7 +23,7 @@ let allPackSize = {
     "12": 10,
 }
 
-//updating cart set
+//inputting rolls in cart set 
 function addNewRoll(rollType, rollGlazing, packSize){
     let basePrice = rolls[rollType]["basePrice"];
     const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
@@ -31,9 +31,7 @@ function addNewRoll(rollType, rollGlazing, packSize){
     return roll;
 }
 
-//called here to initialize price with all four items first
-
-//maybe add everything in storage to cartset? 
+//creating display for every roll in cart set
 for (const roll of cartSet){
     createElement(roll);
 }
@@ -58,6 +56,10 @@ function removeItem(roll){
     updateTotalPrice();
     updateLocalStorage();
     updateCartNumber();
+
+    //printing current rolls in local storage
+    let currentStorage = localStorage.getItem("storedRolls");
+    console.log(currentStorage);
 }
 
 function updateElement(roll){
@@ -85,6 +87,7 @@ function updateElement(roll){
     rollPrice.innerText = "$" + itemPrice;
 }
 
+//finding item price for individual rolls 
 function findItemPrice(roll){
     let glazingPrice = allGlazing[roll.glazing];
     let packPrice = allPackSize[roll.size];
@@ -126,7 +129,7 @@ updateTotalPrice();
 
 function updateLocalStorage(){
     const cartArray = Array.from(cartSet);
-    //basically saving cart set here to local storage
+    //saving cart set here to local storage
     let cartArrayString = JSON.stringify(cartArray);
     localStorage.setItem("storedRolls", cartArrayString);
 }
