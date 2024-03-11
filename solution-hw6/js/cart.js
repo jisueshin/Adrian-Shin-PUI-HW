@@ -31,18 +31,9 @@ function addNewRoll(rollType, rollGlazing, packSize){
     return roll;
 }
 
-//initializing four rolls in the cart
-const cartOriginal = addNewRoll("Original", "Sugar milk", "1");
-
-const cartWalnut = addNewRoll("Walnut", "Vanilla milk", "12");
-
-const cartRaisin = addNewRoll("Raisin", "Sugar milk", "3");
-
-const cartApple = addNewRoll("Apple", "Keep original", "3");
-
 //called here to initialize price with all four items first
-updateTotalPrice();
 
+//maybe add everything in storage to cartset? 
 for (const roll of cartSet){
     createElement(roll);
 }
@@ -112,3 +103,20 @@ function updateTotalPrice(){
     displayedPrice.innerText = "$" + totalPrice;
 }
 
+// hw 6 local storage
+
+function retrieveLocalStorage(){
+    const cartArrayString = localStorage.getItem("storedRolls");
+    const cartArray = JSON.parse(cartArrayString);
+    for (const item of cartArray){
+        const roll = addNewRoll(item.type, item.glazing, item.size);
+        //TODO: update parameters
+        createElement(roll);
+    }
+}
+
+if (localStorage.getItem("storedRolls") != null){
+    retrieveLocalStorage();
+}
+
+updateTotalPrice();

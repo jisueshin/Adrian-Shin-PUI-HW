@@ -110,6 +110,27 @@ function updateCart(){
     item = new Roll(rollType, currentGlaze, currentPackSize, basePrice);
     cart.push(item);
     console.log(cart);
+    saveToLocalStorage();
 }
 
+function saveToLocalStorage(){
+    let cartArrayString = JSON.stringify(cart);
+    localStorage.setItem("storedRolls", cartArrayString);
+    console.log(localStorage);
+}
 
+//works when i stay on same page (two same type rolls)
+//TODO: implement retrieve function here? 
+//cart array is reset every time i reload -> resets stored rolls 
+
+function retrieveLocalStorage(){
+    const cartArrayString = localStorage.getItem("storedRolls");
+    const cartArray = JSON.parse(cartArrayString);
+    for (const item of cartArray){
+        cart.push(item);
+    }
+}
+
+if (localStorage.getItem("storedRolls") != null){
+    retrieveLocalStorage();
+}
