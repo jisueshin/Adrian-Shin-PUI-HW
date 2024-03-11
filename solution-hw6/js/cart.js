@@ -56,6 +56,7 @@ function removeItem(roll){
     roll.element.remove();
     cartSet.delete(roll);
     updateTotalPrice();
+    updateLocalStorage();
 }
 
 function updateElement(roll){
@@ -110,8 +111,9 @@ function retrieveLocalStorage(){
     const cartArray = JSON.parse(cartArrayString);
     for (const item of cartArray){
         const roll = addNewRoll(item.type, item.glazing, item.size);
-        //TODO: update parameters
+        //added to cart set here in addnewroll function
         createElement(roll);
+        //display is created in this function
     }
 }
 
@@ -120,3 +122,10 @@ if (localStorage.getItem("storedRolls") != null){
 }
 
 updateTotalPrice();
+
+function updateLocalStorage(){
+    const cartArray = Array.from(cartSet);
+    //basically saving cart set here to local storage
+    let cartArrayString = JSON.stringify(cartArray);
+    localStorage.setItem("storedRolls", cartArrayString);
+}
